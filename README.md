@@ -4,7 +4,7 @@ This repository serves as a central hub for indexing all Cartesi resources and d
 
 ## Resources
 
-| Resource Name                                                   | Description                                                                                                               |
+| Resource                                                   | Description                                                                                                               |
 | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | [Mugen Builders org and it's repositories](link_to_doc)         | A community-driven initiative that provides resources and information to developers exploring Cartesi Rollups technology. |
 | [Cartesi Docs](https://github.com/cartesi/docs)                 | Official Cartesi Documentation                                                                                            |
