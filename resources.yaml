@@ -1,0 +1,257 @@
+resources:
+  - name: Udemy tutorial
+    url: https://www.udemy.com/course/cartesi-masterclass
+    location_used:
+      - Official Documentation(Header, Retrieve Outputs Page, Asset Handling)
+      - Mugen Builders Github
+      - Notion pages
+      - Dorahacks
+      - Devhub page
+    description: Reference material for learning Cartesi
+    current_version: version 2
+
+  - name: Official Documentation
+    url: https://docs.cartesi.io
+    location_used:
+      - Mugen Builders Github
+      - Linktree Cartesi
+      - Udemy tutorial
+      - All workshop slides
+      - Dorahacks
+      - Devhub page
+    description: Official reference material for learning Cartesi
+    current_version: v1.3.0
+    version_url: https://github.com/cartesi/docs/releases/tag/v1.3.0
+
+  - name: Mugen Builders Github
+    location_used:
+      - Udemy tutorial
+      - Workshop slides
+      - Discord
+      - Docs
+      - Devhub page
+    description: DevAd Unit Hub for learning Cartesi
+
+  - name: DSG
+    url: https://mugenbuilders.notion.site/Seed-Grants-51880c30fb7d4f9180cce04cc19601cf
+    location_used:
+      - Dorahacks
+      - Discord
+      - All workshop slides
+      - Mugen builders github
+    description: Seed grants official link
+
+  - name: Deroll
+    url: https://github.com/tuler/deroll
+    location_used:
+      - Official docs, community tools page
+      - Mugen Builders
+      - tools section
+    description: Community tool(HLF) for building
+    current_version: v.0.1.1
+    version_url: https://github.com/tuler/deroll/releases/tag/%40deroll%2Fcreate-app%400.1.1
+
+  - name: NoNodo
+    url: https://github.com/Calindra/nonodo/tree/main
+    location_used:
+      - Official docs, community tools page
+      - Mugen Builders, tools section
+      - Development/Running the application docs
+    description: Community tool for testing
+
+  - name: Cartesi CLI
+    location_used:
+      - Official docs
+      - Mugen Builders, tools section
+    description: Official tool for building
+
+  - name: Cartesify
+    url: https://github.com/Calindra/cartesify
+    location_used:
+      - Official docs,community tools page
+      - Mugen Builders, tools section
+    description: Community tool for building
+    current_version: v.1.0.0
+    version_url: https://github.com/Calindra/cartesify/releases/tag/v1.0.0
+
+  - name: Python HLF
+    url: https://github.com/prototyp3-dev/python-cartesi
+    location_used:
+      - Official docs, community tools page
+      - Mugen Builders, tools section
+    description: Community tool for building
+
+
+  - name: Rollmelette
+    url: https://github.com/rollmelette/rollmelette
+    location_used:
+      - Official docs, community tools page
+      - Mugen Builders, tools section
+    description: Community tool for building
+    current_version: v0.1.1
+    version_url: https://github.com/rollmelette/rollmelette/releases/latest
+
+  - name: Python-wallet
+    url: https://github.com/jplgarcia/python-wallet
+    location_used:
+      - Official docs, community tools page
+      - Mugen Builders, tools section
+    description: Community tool for building
+
+  - name: Cartesi TS-SQLite template
+    url: https://github.com/doiim/cartesi-ts-sqlite
+    location_used:
+      - Official docs, community tools page
+      - Mugen Builders, tools section
+    description: Community tool for building
+
+  - name: Cartesi-Wallet
+    url: https://github.com/jjhbk/cartesi-wallet
+    location_used:
+      - Mugen Builders, tools section
+    description: Community tool for building
+
+  - name: Cartesi-Router
+    url: https://github.com/jjhbk/cartesi-router
+    location_used:
+      - Quickstart page, official docs
+      - Mugen Builders, tools section
+    description: Community tool for build
+
+  - name: Grokking Cartesi Rollups
+    url: https://cartesi.io/blog/understanding-cartesi-rollups-pt2/
+    location_used:
+      - Overview page of official documentation
+      - Architecture page of Cartesi documentation
+    description: Article on Cartesi blog to learn Cartesi
+
+  - name: Application Specific Rollups
+    url: https://medium.com/cartesi/application-specific-rollups-e12ed5d9de01
+    location_used:
+      - Overview page of official documentation
+    description: Article on Medium by the Foundation
+
+
+  - name: Optimistic Rollups(OR)
+    url: https://ethereum.org/en/developers/docs/scaling/optimistic-rollups/
+    location_used:
+      - Official documentation, Core concepts, OR page
+    description: Article on Ethereum to learn OR
+
+  - name: Grokking Dave
+    url: https://cartesi.io/blog/grokking-dave/
+    location_used:
+      - Official documentation, Core concepts, OR page
+    description: Article on Cartesi blog to learn Dave
+
+  - name: Dave
+    url: https://github.com/cartesi/dave
+    location_used: 
+      - Official documentation, Core concepts, Architecture page
+    description: Fraud proof protocol for Cartesi Rollups
+
+  - name: Cartesi Machine DeepDive
+    url: https://youtu.be/uUzn_vdWyDM?si=J2or_Nfym5pabkjNz3z8Gw
+    location_used:
+      - Official documentation, Core concepts, Architecture page
+    description: Youtube video to learn about the Cartesi Machine
+
+  - name: Grokking Cartesi nodes
+    url: https://cartesi.io/blog/grokking-cartesi-nodes/
+    location_used:
+      - Core concepts, docs
+    description: Article on Cartesi blog to learn Cartesi Node
+
+  - name: Grokking Cartesi Rollups
+    url: https://cartesi.io/blog/understanding-cartesi-rollups-pt2/
+    location_used:
+      - Official documentation, Core concepts, Architecture page
+    description: Article on Cartesi blog to learn Rollups
+
+  - name: Grokking CVM
+    url: https://cartesi.io/blog/grokking-cartesi-virtual-machine/
+    location_used:
+      - Official documentation, Core concepts, Architecture page
+    description: Article on Cartesi blog to learn Cartesi Machine
+
+  - name: Honeypot
+    url: https://honeypot.cartesi.io/
+    location_used:
+      - Official documentation, Core concepts, mainnet consideration
+    description: Honeypot landing page
+
+  - name: Cartesi Machine Repo
+    url: https://honeypot.cartesi.io/
+    location_used:
+      - Official documentation, Rollups API, overview
+    description: Github repo for CVM
+    version_url: https://github.com/cartesi/machine-emulator/releases/tag/v0.17.0
+
+  - name: Rollups contracts repo
+    url: https://github.com/cartesi/rollups-contracts/tree/v1.4.0/onchain/rollups/contracts
+    location_used:
+      - Rollups API, docs
+      - Official documentation, deployment page
+    description: Github repo for Rollups contracts
+    version_url: https://github.com/cartesi/rollups-contracts/releases/tag/v1.4.0
+
+
+  - name: Rollups Node Repo
+    url: https://github.com/cartesi/rollups-node
+    location_used:
+      - Official documentation, Rollups API, overview
+    description: Github repo, Cartesi
+    version_url: https://github.com/cartesi/rollups-node/releases/tag/v1.5.0
+
+  - name: Docker Installation
+    url: https://www.docker.com/products/docker-desktop/
+    location_used:
+      - Official documentation, Development, Installation page
+    description: External link to install Docker
+
+  - name: Install Node
+    url: https://nodejs.org/en/download/
+    location_used:
+      - Official documentation, Development, Installation page
+    description: External link to install node
+
+  - name: Install WSL2
+    url: https://learn.microsoft.com/en-us/windows/wsl/install
+    location_used:
+      - Official documentation, Development, Installation page
+    description: External link to install WSL2
+
+  - name: Install Ubuntu
+    url: https://ubuntu.com/download/desktop
+    location_used:
+      - Official documentation, Development, Installation page
+    description: External link to install Ubuntu
+
+  - name: Install Postgres locally
+    url: https://www.codecademy.com/article/installing-and-using-postgresql-locally
+    location_used:
+      - Official documentation, Deployment,Self-hosted page
+    description: External link to install Postgres locally
+
+  - name: How to create a Postgres cluster
+    url: https://docs.digitalocean.com/products/databases/postgresql/how-to/create/
+    location_used:
+      - Official documentation, Deployment,Self-hosted page
+    description: External link to create a Postgres Cluster
+
+  - name: Deploy Docker Containers on AWS
+    url: https://www.amazonaws.cn/en/getting-started/tutorials/deploy-docker-containers/
+    location_used:
+      - Official documentation, Deployment,Self-hosted page
+    description: External link to deploy on AWS
+
+  - name: Deploy Docker Containers on Digital Ocean
+    location_used: https://www.digitalocean.com/solutions/docker-hosting
+      - Official documentation, Deployment,Self-hosted page
+    description: External link to deploy on Digital Ocean
+
+  - name: Docker Tag
+    location_used: https://docs.docker.com/reference/cli/docker/image/tag/
+      - Official documentation, Deployment,Self-hosted page
+    description: External link to create Docker tags
+

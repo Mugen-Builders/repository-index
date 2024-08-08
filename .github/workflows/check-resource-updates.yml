@@ -1,0 +1,105 @@
+name: Check Resource Updates
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  workflow_dispatch:  # Allow manual triggering
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install requests PyYAML
+
+      - name: Check for updates
+        id: check_updates
+        run: |
+          import os
+          import requests
+          import yaml
+          import json
+          from datetime import datetime
+
+          def get_latest_release(repo_url):
+              api_url = f"https://api.github.com/repos/{repo_url}/releases/latest"
+              response = requests.get(api_url, headers={"Authorization": f"token {os.environ['GITHUB_TOKEN']}"})
+              if response.status_code == 200:
+                  return response.json()['tag_name'].lstrip('v')
+              return None
+
+          with open('resources.yaml', 'r') as file:
+              resources = yaml.safe_load(file)
+
+          updates = []
+          for resource in resources['resources']:
+              if 'url' in resource and 'github.com' in resource['url']:
+                  repo_url = '/'.join(resource['url'].split('/')[-2:])
+                  latest_version = get_latest_release(repo_url)
+                  if latest_version and latest_version != resource.get('current_version'):
+                      updates.append(f"{resource['name']}: {resource.get('current_version', 'N/A')} -> {latest_version}")
+                      resource['current_version'] = latest_version
+                      resource['version_url'] = f"https://github.com/{repo_url}/releases/tag/v{latest_version}"
+
+          if updates:
+              print(f"::set-output name=updates::{json.dumps(updates)}")
+              with open('resources.yaml', 'w') as file:
+                  yaml.dump(resources, file, sort_keys=False)
+
+          # Generate summary report
+          report = f"Update check run on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+          if updates:
+              report += "The following updates were found:\n"
+              for update in updates:
+                  report += f"- {update}\n"
+          else:
+              report += "No updates were found.\n"
+          
+          with open('update_report.md', 'w') as f:
+              f.write(report)
+
+          print(f"::set-output name=report_path::update_report.md")
+
+      - name: Commit updated resources file
+        if: steps.check_updates.outputs.updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add resources.yaml
+          git commit -m "Update resource versions"
+          git push
+
+      - name: Send email notification
+        if: steps.check_updates.outputs.updates
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.sendgrid.net
+          server_port: 465
+          username: apikey
+          password: ${{ secrets.SENDGRID_API_KEY }}
+          subject: Resource Updates Detected
+          body: |
+            The following updates were detected:
+            ${{ steps.check_updates.outputs.updates }}
+          from: Michael <michael@mugen.builders>
+          to: michael@mugen.builders, gabriel@mugen.builders
+        #   content_type: text/plain
+
+      - name: Upload update report
+        uses: actions/upload-artifact@v2
+        with:
+          name: update-report
+          path: ${{ steps.check_updates.outputs.report_path }}
